@@ -6,7 +6,7 @@ Efficient native Python implementation of the integer square root function.
 """
 
 import doctest
-
+from math import sqrt
 
 def isqrt(n):
     """
@@ -28,9 +28,18 @@ def isqrt(n):
     >>> r = randint(2**511, 2**512 - 1)
     >>> isqrt(r**2) == r
     True
+    >>> isqrt(2**30000) == 2**15000
+    True
     """
     if n is None or type(n) is not int or n < 0:
         raise ValueError("Input must be a non-negative integer.")
+
+    try: # Attempt to use the native math library's sqrt function.
+        root = int(sqrt(n))
+        if pow(root, 2) == n: # No error from floating point conversion.
+            return root
+    except OverflowError: # Use the integer-only bit-wise algorithm.
+        pass
 
     root = 0 # Running result.
     rmdr = 0 # Running remainder n - root**2.

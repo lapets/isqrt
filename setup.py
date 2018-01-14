@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name             = 'isqrt',
-    version          = '0.9.1.0',
+    version          = '0.9.2.0',
     packages         = ['isqrt',],
     install_requires = [],
     license          = 'MIT',
