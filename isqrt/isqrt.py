@@ -1,8 +1,6 @@
-"""isqrt
-https://github.com/lapets/isqrt
+"""Integer square root.
 
 Efficient native Python implementation of the integer square root function.
-
 """
 
 import doctest
@@ -15,7 +13,7 @@ def isqrt(n):
     Credit goes to:
     https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7
     http://stackoverflow.com/a/23279113/2738025
-    
+
     >>> isqrt(4)
     2
     >>> isqrt(16)
@@ -31,7 +29,7 @@ def isqrt(n):
     >>> isqrt(2**30000) == 2**15000
     True
     """
-    if n is None or type(n) is not int or n < 0:
+    if n is None or (not isinstance(n, int)) or n < 0:
         raise ValueError("Input must be a non-negative integer.")
 
     try: # Attempt to use the native math library's sqrt function.
@@ -53,5 +51,5 @@ def isqrt(n):
     return root
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     doctest.testmod()
