@@ -41,3 +41,11 @@ Style conventions are enforced using `Pylint <https://www.pylint.org/>`_::
 Acknowledgments
 ---------------
 The initial version of this function was `posted <http://stackoverflow.com/a/23279113/2738025>`_ on Stack Overflow. A more efficient version was implemented by Alexander Gosselin `here <https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7>`_. The implementation in this package is adapted almost directly from these previous implementations.
+
+Contributions
+-------------
+In order to contribute to the source code, open an issue or submit a pull request on the GitHub page for this library.
+
+Versioning
+----------
+Beginning with version 0.10.0, the version number format for this library and the changes to the library associated with version number increments conform with `Semantic Versioning 2.0.0 <https://semver.org/#semantic-versioning-200>`_.
