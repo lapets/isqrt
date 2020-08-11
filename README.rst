@@ -4,13 +4,15 @@ isqrt
 
 Efficient Python implementation of the integer square root function.
 
-.. image:: https://badge.fury.io/py/isqrt.svg
+|pypi|
+
+.. |pypi| image:: https://badge.fury.io/py/isqrt.svg
    :target: https://badge.fury.io/py/isqrt
    :alt: PyPI version and link.
 
 Purpose
 -------
-Given an arbitrarily large non-negative integer :code:`n`, finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r+1)**2 > n`. The running time is linear time in the bit length of the integer.
+Given an arbitrarily large non-negative integer :code:`n`, finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r+1)**2 > n`. The running time is linear in the bit length of the integer.
 
 Package Installation and Usage
 ------------------------------
@@ -21,6 +23,16 @@ The package is available on PyPI::
 The library can be imported in the usual way::
 
     from isqrt import isqrt
+
+Testing and Conventions
+-----------------------
+All unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`_::
+
+    python isqrt/isqrt.py -v
+
+Style conventions are enforced using `Pylint <https://www.pylint.org/>`_::
+
+    pylint isqrt
 
 Acknowledgments
 ---------------
