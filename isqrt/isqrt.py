@@ -62,4 +62,4 @@ def isqrt(n):
     return root
 
 if __name__ == "__main__":
-    doctest.testmod()
+    doctest.testmod() # pragma: no cover
