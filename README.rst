@@ -4,7 +4,7 @@ isqrt
 
 Efficient Python implementation of the integer square root function.
 
-|pypi| |travis|
+|pypi| |travis| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/isqrt.svg
    :target: https://badge.fury.io/py/isqrt
@@ -12,6 +12,9 @@ Efficient Python implementation of the integer square root function.
 
 .. |travis| image:: https://travis-ci.com/lapets/isqrt.svg?branch=master
     :target: https://travis-ci.com/lapets/isqrt
+
+.. |coveralls| image:: https://coveralls.io/repos/github/lapets/isqrt/badge.svg?branch=master
+   :target: https://coveralls.io/github/lapets/isqrt?branch=master
 
 Purpose
 -------
