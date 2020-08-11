@@ -28,9 +28,20 @@ def isqrt(n):
     True
     >>> isqrt(2**30000) == 2**15000
     True
+    >>> isqrt('abc')
+    Traceback (most recent call last):
+      ...
+    TypeError: input must be an integer
+    >>> isqrt(-2)
+    Traceback (most recent call last):
+      ...
+    ValueError: input must be a non-negative integer
     """
-    if n is None or (not isinstance(n, int)) or n < 0:
-        raise ValueError("Input must be a non-negative integer.")
+    if n is None or (not isinstance(n, int)):
+        raise TypeError("input must be an integer")
+
+    if n < 0:
+        raise ValueError("input must be a non-negative integer")
 
     try: # Attempt to use the native math library's sqrt function.
         root = int(sqrt(n))
@@ -49,7 +60,6 @@ def isqrt(n):
         root = root << 1 | bit_next # Add next bit to running result.
         rmdr -= cand * bit_next # Reduce the remainder if bit was added.
     return root
-
 
 if __name__ == "__main__":
     doctest.testmod()
