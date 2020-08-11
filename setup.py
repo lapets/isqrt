@@ -9,12 +9,13 @@ setup(
     packages=["isqrt",],
     install_requires=[],
     license="MIT",
-    maintainer="Andrei Lapets",
-    maintainer_email="a@lapets.io",
     url="https://github.com/lapets/isqrt",
+    author="Andrei Lapets",
+    author_email="a@lapets.io",
     description="Efficient native Python implementation of the "+\
                 "integer square root function.",
-    long_description=open("README.rst").read(),
+    long_description=long_description,
+    long_description_content_type="text/x-rst",
     test_suite="nose.collector",
     tests_require=["nose"],
 )
