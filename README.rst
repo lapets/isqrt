@@ -10,8 +10,8 @@ Efficient Python implementation of the integer square root function.
    :target: https://badge.fury.io/py/isqrt
    :alt: PyPI version and link.
 
-.. |actions| image:: https://github.com/lapets/isqrt/workflows/lint-test-cover-docs/badge.svg
-   :target: https://github.com/lapets/isqrt/actions/workflows/lint-test-cover-docs.yml
+.. |actions| image:: https://github.com/lapets/isqrt/workflows/lint-test-cover/badge.svg
+   :target: https://github.com/lapets/isqrt/actions/workflows/lint-test-cover.yml
    :alt: GitHub Actions status.
 
 .. |coveralls| image:: https://coveralls.io/repos/github/lapets/isqrt/badge.svg?branch=master
