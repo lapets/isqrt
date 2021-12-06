@@ -61,7 +61,7 @@ Style conventions are enforced using `Pylint <https://www.pylint.org/>`_::
 
 Acknowledgments
 ---------------
-The initial version of this function was `posted <http://stackoverflow.com/a/23279113/2738025>`_ on Stack Overflow. A more efficient version was implemented by Alexander Gosselin `here <https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7>`_. The implementation in this package is adapted almost directly from these previous implementations.
+The initial version of this function was `posted <http://stackoverflow.com/a/23279113/2738025>`_ on Stack Overflow. A `more efficient version <https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7>`_ was implemented by Alexander Gosselin. The implementation in this package is adapted almost directly from these previous implementations.
 
 Contributions
 -------------
