@@ -1,27 +1,26 @@
-"""Integer square root.
-
+"""
 Efficient native Python implementation of the integer square root function.
 """
-
+from __future__ import annotations
 import doctest
 from math import sqrt
 
-def isqrt(n):
+def isqrt(n: int) -> int:
     """
-    Returns the largest root such that root**2 <= n (root + 1)**2 > n.
+    Returns the largest root such that ``root**2 <= n (root + 1)**2 > n``.
 
-    Credit goes to:
-    https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7
-    http://stackoverflow.com/a/23279113/2738025
+    This implementation is adapted from the sources below:
+    * https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7
+    * http://stackoverflow.com/a/23279113/2738025
 
     >>> isqrt(4)
     2
     >>> isqrt(16)
     4
-    >>> list(map(isqrt, range(16,26)))
+    >>> list(map(isqrt, range(16, 26)))
     [4, 4, 4, 4, 4, 4, 4, 4, 4, 5]
     >>> from random import randint
-    >>> all([isqrt(r**2 + randint(0,r)) == r  for r in range(0,1000)])
+    >>> all([isqrt(r**2 + randint(0, r)) == r  for r in range(0, 1000)])
     True
     >>> r = randint(2**511, 2**512 - 1)
     >>> isqrt(r**2) == r
