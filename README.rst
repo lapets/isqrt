@@ -11,18 +11,19 @@ Efficient Python implementation of the integer square root function.
    :alt: PyPI version and link.
 
 .. |travis| image:: https://travis-ci.com/lapets/isqrt.svg?branch=master
-    :target: https://travis-ci.com/lapets/isqrt
+   :target: https://travis-ci.com/lapets/isqrt
 
 .. |coveralls| image:: https://coveralls.io/repos/github/lapets/isqrt/badge.svg?branch=master
    :target: https://coveralls.io/github/lapets/isqrt?branch=master
+   :alt: Coveralls test coverage summary.
 
 Purpose
 -------
-Given an arbitrarily large non-negative integer :code:`n`, finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r+1)**2 > n`. The running time is linear in the bit length of the integer.
+Given an arbitrarily large non-negative integer :code:`n`, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`_ function finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r+1)**2 > n`. The running time is linear in the bit length of the input integer.
 
 Package Installation and Usage
 ------------------------------
-The package is available on PyPI::
+The package is available on `PyPI <https://pypi.org/project/isqrt/>`_::
 
     python -m pip install isqrt
 
@@ -30,11 +31,23 @@ The library can be imported in the usual way::
 
     from isqrt import isqrt
 
+The function ``isqrt`` is an efficient implementation of the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`_ algorithm::
+
+    >>> isqrt(4)
+    2
+    >>> isqrt(16)
+    4
+    >>> list(map(isqrt, range(16, 26)))
+    [4, 4, 4, 4, 4, 4, 4, 4, 4, 5]
+    >>> isqrt(2**30000) == 2**15000
+    True
+
 Testing and Conventions
 -----------------------
 All unit tests are executed and their coverage is measured when using `nose <https://nose.readthedocs.io/>`_ (see ``setup.cfg`` for configution details)::
 
-    nosetests
+    python -m pip install nose coverage
+    nosetests --cover-erase
 
 Alternatively, all unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`_::
 
@@ -42,6 +55,7 @@ Alternatively, all unit tests are included in the module itself and can be execu
 
 Style conventions are enforced using `Pylint <https://www.pylint.org/>`_::
 
+    python -m pip install pylint
     pylint isqrt
 
 Acknowledgments
@@ -50,7 +64,7 @@ The initial version of this function was `posted <http://stackoverflow.com/a/232
 
 Contributions
 -------------
-In order to contribute to the source code, open an issue or submit a pull request on the GitHub page for this library.
+In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/isqrt>`_ for this library.
 
 Versioning
 ----------
