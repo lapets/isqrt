@@ -4,14 +4,15 @@ isqrt
 
 Efficient Python implementation of the integer square root function.
 
-|pypi| |travis| |coveralls|
+|pypi| |actions| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/isqrt.svg
    :target: https://badge.fury.io/py/isqrt
    :alt: PyPI version and link.
 
-.. |travis| image:: https://travis-ci.com/lapets/isqrt.svg?branch=master
-   :target: https://travis-ci.com/lapets/isqrt
+.. |actions| image:: https://github.com/lapets/isqrt/workflows/lint-test-cover-docs/badge.svg
+   :target: https://github.com/lapets/isqrt/actions/workflows/lint-test-cover-docs.yml
+   :alt: GitHub Actions status.
 
 .. |coveralls| image:: https://coveralls.io/repos/github/lapets/isqrt/badge.svg?branch=master
    :target: https://coveralls.io/github/lapets/isqrt?branch=master
