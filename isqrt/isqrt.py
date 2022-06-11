@@ -6,12 +6,13 @@ import doctest
 from math import sqrt
 
 def isqrt(n: int) -> int:
+    # pylint: disable=C0301 # Accommodates long link URLs.
     """
     Returns the largest root such that ``root**2 <= n (root + 1)**2 > n``.
 
-    This implementation is adapted from the sources below:
-    * https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7
-    * http://stackoverflow.com/a/23279113/2738025
+    This implementation is adapted from an
+    `implementation by Alexander Gosselin <https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7>`__,
+    which is based on a `Stack Overflow answer by Tobin Fricke <http://stackoverflow.com/a/23279113/2738025>`__.
 
     >>> isqrt(4)
     2
