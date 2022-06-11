@@ -28,14 +28,17 @@ def isqrt(n: int) -> int:
     True
     >>> isqrt(2**30000) == 2**15000
     True
-    >>> isqrt('abc')
-    Traceback (most recent call last):
-      ...
-    TypeError: input must be an integer
+
+    The type and sign of the input are checked.
+
     >>> isqrt(-2)
     Traceback (most recent call last):
       ...
     ValueError: input must be a non-negative integer
+    >>> isqrt('abc')
+    Traceback (most recent call last):
+      ...
+    TypeError: input must be an integer
     """
     if n is None or (not isinstance(n, int)):
         raise TypeError("input must be an integer")
