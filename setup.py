@@ -5,7 +5,7 @@ with open("README.rst", "r") as fh:
 
 setup(
     name="isqrt",
-    version="0.11.0",
+    version="0.12.0",
     packages=["isqrt",],
     install_requires=[],
     license="MIT",

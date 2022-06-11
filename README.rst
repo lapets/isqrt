@@ -2,7 +2,7 @@
 isqrt
 =====
 
-Efficient Python implementation of the integer square root function.
+Efficient pure Python implementation of the integer square root function.
 
 |pypi| |actions| |coveralls|
 
@@ -20,7 +20,12 @@ Efficient Python implementation of the integer square root function.
 
 Purpose
 -------
-Given an arbitrarily large non-negative integer :code:`n`, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`_ function finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r+1)**2 > n`. The running time is linear in the bit length of the input integer.
+Given an arbitrarily large non-negative integer :code:`n`, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`_ function finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r + 1)**2 > n`. The number of Python arithmetic operations executed during an invocation of the function is linear in the bit length of the input integer.
+
+.. |math_isqrt| replace:: ``math.isqrt``
+.. _math_isqrt: https://docs.python.org/3/library/math.html#math.isqrt
+
+The built-in |math_isqrt|_ function was introduced in Python 3.8 and should be used instead of the function defined in this package.
 
 Package Installation and Usage
 ------------------------------
