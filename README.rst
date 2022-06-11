@@ -20,16 +20,16 @@ Efficient pure Python implementation of the integer square root function.
 
 Purpose
 -------
-Given an arbitrarily large non-negative integer :code:`n`, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ function finds the largest integer :code:`r` such that :code:`r**2 <= n` and :code:`(r + 1)**2 > n`. The number of Python arithmetic operations executed during an invocation of the function is linear in the bit length of the input integer.
+Given an arbitrarily large non-negative integer ``n``, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ function finds the largest integer ``r`` such that ``r**2 <= n`` and ``(r + 1)**2 > n``. The number of Python arithmetic operations executed during an invocation of the function is linear in the bit length of the input integer.
 
 .. |math_isqrt| replace:: ``math.isqrt``
 .. _math_isqrt: https://docs.python.org/3/library/math.html#math.isqrt
 
 The built-in |math_isqrt|_ function was introduced in Python 3.8 and should be used instead of the function defined in this package.
 
-Package Installation and Usage
-------------------------------
-The package is available on `PyPI <https://pypi.org/project/isqrt>`__::
+Installation and Usage
+----------------------
+This library is available as a `package on PyPI <https://pypi.org/project/isqrt>`__::
 
     python -m pip install isqrt
 
@@ -48,11 +48,17 @@ The function ``isqrt`` is an efficient implementation of the `integer square roo
     >>> isqrt(2**30000) == 2**15000
     True
 
+Development
+-----------
+All installation and development dependencies are managed using `setuptools <https://pypi.org/project/setuptools>`__ and are fully specified in ``setup.py``. The ``extras_require`` parameter is used to `specify optional requirements <https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#optional-dependencies>`__ for various development tasks. This makes it possible to specify additional options (such as ``test``, ``lint``, and so on) when performing installation using `pip <https://pypi.org/project/pip>`__::
+
+    python -m pip install .[test,lint]
+
 Testing and Conventions
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 All unit tests are executed and their coverage is measured when using `pytest <https://docs.pytest.org>`__ (see ``setup.cfg`` for configuration details)::
 
-    python -m pip install pytest pytest-cov
+    python -m pip install .[test]
     python -m pytest
 
 Alternatively, all unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`__::
@@ -61,30 +67,32 @@ Alternatively, all unit tests are included in the module itself and can be execu
 
 Style conventions are enforced using `Pylint <https://www.pylint.org>`__::
 
-    python -m pip install pylint
+    python -m pip install .[lint]
     python -m pylint egcd
 
 Acknowledgments
----------------
+^^^^^^^^^^^^^^^
 The initial version of this function was `posted <http://stackoverflow.com/a/23279113/2738025>`__ on Stack Overflow. A `more efficient version <https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7>`__ was implemented by Alexander Gosselin. The implementation in this package is adapted directly from these previous implementations.
 
 Contributions
--------------
+^^^^^^^^^^^^^
 In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/isqrt>`__ for this library.
 
 Versioning
-----------
+^^^^^^^^^^
 Beginning with version 0.10.0, the version number format for this library and the changes to the library associated with version number increments conform with `Semantic Versioning 2.0.0 <https://semver.org/#semantic-versioning-200>`__.
 
 Publishing
-----------
-This library can be published as a `package on PyPI <https://pypi.org/project/isqrt>`__ by a package maintainer. Install the `wheel <https://pypi.org/project/wheel>`__ package, remove any old build/distribution files, and package the source into a distribution archive::
+^^^^^^^^^^
+This library can be published as a `package on PyPI <https://pypi.org/project/isqrt>`__ by a package maintainer. First, install the dependencies required for packaging and publishing::
 
-    python -m pip install wheel
+    python -m pip install .[publish]
+
+Remove any old build/distribution files. Then, package the source into a distribution archive using the `wheel <https://pypi.org/project/wheel>`__ package::
+
     rm -rf dist *.egg-info
     python setup.py sdist bdist_wheel
 
-Next, install the `twine <https://pypi.org/project/twine>`__ package and upload the package distribution archive to `PyPI <https://pypi.org>`__::
+Finally, upload the package distribution archive to `PyPI <https://pypi.org>`__ using the `twine <https://pypi.org/project/twine>`__ package::
 
-    python -m pip install twine
     python -m twine upload dist/*
