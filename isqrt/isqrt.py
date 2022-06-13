@@ -63,18 +63,19 @@ def isqrt(n: int) -> int:
     # To ensure this implementation is backwards-compatible with previous versions while
     # not introducing performance overheads for the most common case, only convert
     # exceptions if the initial call to the built-in function raises an exception.
-    try:
-        return math.isqrt(n)
-    except ValueError as e:
-        if str(e) == 'isqrt() argument must be nonnegative':
-            raise ValueError('input must be a non-negative integer') from None
-        # Continue to default implementation to ensure backwards-compatible behavior.
-    except TypeError as e:
-        if str(e).endswith('object cannot be interpreted as an integer'):
-            raise TypeError('input must be an integer') from None
-        # Continue to default implementation to ensure backwards-compatible behavior.
-    except: # pylint: disable=W0702
-        pass # Continue to default implementation to ensure backwards-compatible behavior.
+    if hasattr(math, 'isqrt'):
+        try:
+            return math.isqrt(n)
+        except ValueError as e:
+            if str(e) == 'isqrt() argument must be nonnegative':
+                raise ValueError('input must be a non-negative integer') from None
+            # Continue to default implementation to ensure backwards-compatible behavior.
+        except TypeError as e:
+            if str(e).endswith('object cannot be interpreted as an integer'):
+                raise TypeError('input must be an integer') from None
+            # Continue to default implementation to ensure backwards-compatible behavior.
+        except: # pylint: disable=W0702 # pragma: no cover
+            pass # Continue to default implementation to ensure backwards-compatible behavior.
 
     try: # Attempt to use the :obj:`math.sqrt` function.
         root = int(math.sqrt(n))
