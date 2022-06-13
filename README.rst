@@ -20,12 +20,15 @@ Efficient pure Python implementation of the integer square root function.
 
 Purpose
 -------
-Given an arbitrarily large non-negative integer ``n``, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ function finds the largest integer ``r`` such that ``r**2 <= n`` and ``(r + 1)**2 > n``. The number of Python arithmetic operations executed during an invocation of the function is linear in the bit length of the input integer.
+Given an arbitrarily large non-negative integer ``n``, the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ function finds the largest integer ``r`` such that ``r**2 <= n`` and ``(r + 1)**2 > n``.
 
 .. |math_isqrt| replace:: ``math.isqrt``
 .. _math_isqrt: https://docs.python.org/3/library/math.html#math.isqrt
 
-The built-in |math_isqrt|_ function was introduced in Python 3.8 and should be used instead of the function defined in this package.
+.. |math_sqrt| replace:: ``math.sqrt``
+.. _math_sqrt: https://docs.python.org/3/library/math.html#math.sqrt
+
+**The built-in** |math_isqrt|_ **function was introduced in Python 3.8 and should normally be used instead of the function defined in this library.** To provide the best performance possible while retaining backwards-compatible behavior for this library, the implementation in this library invokes |math_isqrt|_ when it is available. If |math_isqrt|_ is not available, this library attempts to use |math_sqrt|_ and then (if |math_sqrt|_ does not produce the correct result or the input is outside the range supported by |math_sqrt|_) defaults to a pure Python implementation in which the number of executed Python arithmetic operations is linear in the bit length of the input integer.
 
 Installation and Usage
 ----------------------
@@ -37,7 +40,7 @@ The library can be imported in the usual way::
 
     from isqrt import isqrt
 
-The function ``isqrt`` is an efficient implementation of the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ algorithm::
+The function ``isqrt`` provides an efficient *pure Python* implementation of the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ algorithm::
 
     >>> isqrt(4)
     2
