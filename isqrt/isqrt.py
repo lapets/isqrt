@@ -45,7 +45,8 @@ def isqrt(n: int) -> int:
 
     Test scenarios in which the :obj:`math.isqrt` function is not available.
 
-    >>> delattr(math, 'isqrt')
+    >>> if hasattr(math, 'isqrt'):
+    ...     delattr(math, 'isqrt')
     >>> isqrt(16)
     4
     >>> isqrt(2**30000) == 2**15000
