@@ -53,7 +53,7 @@ The function ``isqrt`` provides an efficient *pure Python* implementation of the
 
 Development
 -----------
-All installation and development dependencies are managed using `setuptools <https://pypi.org/project/setuptools>`__ and are fully specified in ``setup.py``. The ``extras_require`` parameter is used to `specify optional requirements <https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#optional-dependencies>`__ for various development tasks. This makes it possible to specify additional options (such as ``test``, ``lint``, and so on) when performing installation using `pip <https://pypi.org/project/pip>`__::
+All installation and development dependencies are fully specified in ``pyproject.toml``. The ``project.optional-dependencies`` object is used to `specify optional requirements <https://peps.python.org/pep-0621>`__ for various development tasks. This makes it possible to specify additional options (such as ``test``, ``lint``, and so on) when performing installation using `pip <https://pypi.org/project/pip>`__::
 
     python -m pip install .[test,lint]
 
@@ -90,6 +90,11 @@ Publishing
 This library can be published as a `package on PyPI <https://pypi.org/project/isqrt>`__ by a package maintainer. First, install the dependencies required for packaging and publishing::
 
     python -m pip install .[publish]
+
+Ensure that the correct version number appears in the ``pyproject.toml`` file. Create and push a tag for this version (replacing ``?.?.?`` with the version number)::
+
+    git tag ?.?.?
+    git push origin ?.?.?
 
 Remove any old build/distribution files and package the source into a distribution archive::
 
