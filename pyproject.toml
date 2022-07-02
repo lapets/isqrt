@@ -1,0 +1,41 @@
+[project]
+name = "isqrt"
+version = "0.13.0"
+description = "Efficient pure-Python implementation of the integer square root function."
+license = {file = "LICENSE"}
+authors = [
+    {name = "Andrei Lapets"},
+    {email = "a@lapets.io"}
+]
+readme = "README.rst"
+requires-python = ">=3.7"
+
+[project.urls]
+homepage = "https://github.com/lapets/isqrt"
+repository = "https://github.com/lapets/isqrt"
+
+[project.optional-dependencies]
+test = [
+    "pytest~=7.0",
+    "pytest-cov~=3.0"
+]
+lint = [
+    "pylint~=2.14.0"
+]
+coveralls = [
+    "coveralls~=3.3.1"
+]
+publish = [
+    "twine~=4.0"
+]
+
+[build-system]
+requires = [
+    "build~=0.8",
+    "setuptools~=62.0",
+    "wheel~=0.37"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --ignore=docs --cov=isqrt --cov-report term-missing"

@@ -1,5 +1,5 @@
 """
-Efficient native Python implementation of the integer square root function.
+Efficient pure-Python implementation of the integer square root function.
 """
 from __future__ import annotations
 import doctest
