@@ -40,7 +40,9 @@ The library can be imported in the usual way::
 
     from isqrt import isqrt
 
-The function ``isqrt`` provides an efficient *pure Python* implementation of the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ algorithm::
+Examples
+^^^^^^^^
+The exported function ``isqrt`` provides a pure-Python implementation of the `integer square root <https://en.wikipedia.org/wiki/Integer_square_root>`__ algorithm::
 
     >>> isqrt(4)
     2
