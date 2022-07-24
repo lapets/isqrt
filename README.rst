@@ -98,11 +98,11 @@ Ensure that the correct version number appears in the ``pyproject.toml`` file. C
     git tag ?.?.?
     git push origin ?.?.?
 
-Remove any old build/distribution files and package the source into a distribution archive::
+Remove any old build/distribution files. Then, package the source into a distribution archive::
 
     rm -rf build dist src/*.egg-info
     python -m build --sdist --wheel .
 
-Finally, upload the package distribution archive to `PyPI <https://pypi.org>`__ using the `twine <https://pypi.org/project/twine>`__ package::
+Finally, upload the package distribution archive to `PyPI <https://pypi.org>`__::
 
     python -m twine upload dist/*
