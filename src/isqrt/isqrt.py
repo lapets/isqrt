@@ -5,8 +5,8 @@ from __future__ import annotations
 import doctest
 import math
 
-def isqrt(n: int) -> int:
-    # pylint: disable=R0912,C0301 # Accommodate long link URLs and branch count.
+def isqrt(n: int) -> int: # pylint: disable=too-many-branches
+    # pylint: disable=line-too-long # Accommodate long link URLs on docstring.
     """
     Returns the largest root such that ``root**2 <= n (root + 1)**2 > n``.
     When using Python 3.8 or later, this function acts as a wrapper for the
@@ -75,7 +75,7 @@ def isqrt(n: int) -> int:
             if str(e).endswith('object cannot be interpreted as an integer'):
                 raise TypeError('input must be an integer') from None
             # Continue to default implementation to ensure backwards-compatible behavior.
-        except: # pylint: disable=W0702 # pragma: no cover
+        except: # pylint: disable=bare-except # pragma: no cover
             pass # Continue to default implementation to ensure backwards-compatible behavior.
 
     try: # Attempt to use the :obj:`math.sqrt` function.
