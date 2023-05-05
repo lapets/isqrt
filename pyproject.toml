@@ -1,6 +1,6 @@
 [project]
 name = "isqrt"
-version = "1.0.2"
+version = "1.1.0"
 description = "Efficient pure-Python implementation of the integer square root function."
 license = {text = "MIT"}
 authors = [
