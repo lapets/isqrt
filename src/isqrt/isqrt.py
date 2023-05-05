@@ -13,7 +13,7 @@ def isqrt(n: int) -> int: # pylint: disable=too-many-branches
     built-in :obj:`math.isqrt` function.
 
     For all other supported versions of Python, this function reverts to a
-    pure Python algorithm that is adapted from an
+    pure-Python algorithm that is adapted from an
     `implementation by Alexander Gosselin <https://gist.github.com/castle-bravo/e841684d6bad8e0598e31862a7afcfc7>`__,
     which is based on a `Stack Overflow answer by Tobin Fricke <http://stackoverflow.com/a/23279113/2738025>`__.
 
@@ -100,9 +100,9 @@ def isqrt(n: int) -> int: # pylint: disable=too-many-branches
         raise ValueError('input must be a non-negative integer') # pragma: no cover
 
     root = 0 # Running result.
-    rmdr = 0 # Running remainder n - root**2.
-    for s in reversed(range(0, n.bit_length(), 2)): # Shift n by s bits.
-        bits = n >> s & 3 # The next two most significant bits of n.
+    rmdr = 0 # Running remainder ``n - root**2``.
+    for s in reversed(range(0, n.bit_length(), 2)): # Shift ``n`` by ``s`` bits.
+        bits = n >> s & 3 # The next two most significant bits of ``n``.
         rmdr = rmdr << 2 | bits # Increase the remainder.
         cand = root << 2 | 1 # Shifted candidate root value to try.
         bit_next = int(rmdr >= cand) # The next bit in the remainder.
@@ -110,5 +110,5 @@ def isqrt(n: int) -> int: # pylint: disable=too-many-branches
         rmdr -= cand * bit_next # Reduce the remainder if bit was added.
     return root
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     doctest.testmod() # pragma: no cover
